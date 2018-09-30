@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="org.rgbstudios.binomialdistributioncalculator.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="probability of sucess (p)" />
+
+        <EditText
+            android:id="@+id/pInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:focusedByDefault="true"
+            android:hint="p"
+            android:inputType="numberDecimal"
+            android:maxLength="15"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/nText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/pText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="number of trials (n)" />
+
+        <EditText
+            android:id="@+id/nInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/pText"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:hint="n"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/xText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/nText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="number of successes (x)" />
+
+        <EditText
+            android:id="@+id/xInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/nText"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:hint="x"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/calcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xInput"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/padding_small"
+            android:text="Calculate"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="@dimen/small"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/xText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text=""
+            android:textColor="@color/red" />
+
+        <!--equal-->
+        <TextView
+            android:id="@+id/equalOutputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/calcButton"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="P(X = x)"
+            android:textColor="@color/blue" />
+
+        <EditText
+            android:id="@+id/equalOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calcButton"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:backgroundTint="@color/blue"
+            android:focusable="false"
+            android:inputType="number"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/blue" />
+
+        <ImageButton
+            android:id="@+id/equalCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/calcButton"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_content_copy_black_24dp" />
+
+        <!--less-->
+        <TextView
+            android:id="@+id/lessOutputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/equalOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="P(X &lt; x)"
+            android:textColor="@color/red" />
+
+        <EditText
+            android:id="@+id/lessOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/equalOutputText"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:backgroundTint="@color/red"
+            android:focusable="false"
+            android:inputType="number"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/red" />
+
+        <ImageButton
+            android:id="@+id/lessCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/equalOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_content_copy_black_24dp" />
+
+        <!--greater-->
+        <TextView
+            android:id="@+id/greaterOutputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lessOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="P(X &gt; x)"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/greaterOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lessOutputText"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:backgroundTint="@color/green"
+            android:focusable="false"
+            android:inputType="number"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/green" />
+
+        <ImageButton
+            android:id="@+id/greaterCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/lessOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_content_copy_black_24dp" />
+
+        <!--less equal-->
+        <TextView
+            android:id="@+id/lessEqualOutputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/greaterOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="P(X \u2264 x)"
+            android:textColor="@color/red" />
+
+        <EditText
+            android:id="@+id/lessEqualOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/greaterOutputText"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:backgroundTint="@color/red"
+            android:focusable="false"
+            android:inputType="number"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/red" />
+
+        <ImageButton
+            android:id="@+id/lessEqualCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/greaterOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_content_copy_black_24dp" />
+
+        <!--greater equal-->
+        <TextView
+            android:id="@+id/greaterEqualOutputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/lessEqualOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text="P(X \u2265 x)"
+            android:textColor="@color/green" />
+
+        <EditText
+            android:id="@+id/greaterEqualOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lessEqualOutputText"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/padding_medium"
+            android:width="@dimen/medium"
+            android:backgroundTint="@color/green"
+            android:focusable="false"
+            android:inputType="number"
+            android:padding="@dimen/padding_small"
+            android:selectAllOnFocus="true"
+            android:textAlignment="center"
+            android:textColor="@color/green" />
+
+        <ImageButton
+            android:id="@+id/greaterEqualCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/lessEqualOutputText"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_content_copy_black_24dp" />
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/greaterEqualCopy"
+            android:layout_margin="@dimen/padding_medium"
+            android:text="" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/infoText"
+            android:minHeight="@dimen/medium">
+
+        </com.github.mikephil.charting.charts.PieChart>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/pieChart"
+            android:minHeight="@dimen/large">
+
+        </com.github.mikephil.charting.charts.BarChart>
+
+    </RelativeLayout>
+</ScrollView>

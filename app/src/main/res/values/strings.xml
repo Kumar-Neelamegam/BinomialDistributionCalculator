@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Binomial Distribution Calculator</string>
+    <string name="app_short_name">Binomial Calc</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_info">Info</string>
+    <string name="action_learn">Learn</string>
+    <string name="action_share">Share</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/aboutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_medium"
+            android:padding="@dimen/padding_small"
+            android:text=""
+            android:textSize="@dimen/text_medium" />
+
+        <ImageView
+            android:id="@+id/rgbLogo"
+            android:layout_width="@dimen/small"
+            android:layout_height="@dimen/small"
+            android:layout_below="@id/aboutText"
+
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@drawable/ic_rgb" />
+
+        <TextView
+            android:id="@+id/rgbLinkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/aboutText"
+            android:layout_margin="@dimen/padding_medium"
+            android:layout_toRightOf="@id/rgbLogo"
+            android:autoLink="web"
+            android:padding="@dimen/padding_small"
+            android:text="rgbstudios.org"
+            android:textSize="@dimen/text_medium" />
+
+        <Button
+            android:id="@+id/contactButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgbLogo"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/colorPrimary"
+            android:drawableRight="@drawable/ic_mail_outline_white_24dp"
+            android:padding="@dimen/padding_small"
+            android:text="Send Feedback  "
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
