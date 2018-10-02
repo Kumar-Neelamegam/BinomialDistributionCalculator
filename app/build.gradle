@@ -6,8 +6,8 @@ android {
         applicationId "org.rgbstudios.binomialdistributioncalculator"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 5
-        versionName "1.0.3 stable"
+        versionCode 6
+        versionName "1.0.4 stable"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

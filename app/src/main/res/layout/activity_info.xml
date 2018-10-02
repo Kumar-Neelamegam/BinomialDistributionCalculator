@@ -40,6 +40,18 @@
             android:text="rgbstudios.org"
             android:textSize="@dimen/text_medium" />
 
+        <TextView
+            android:id="@+id/calcLinkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rgbLinkText"
+            android:layout_margin="@dimen/padding_small"
+            android:layout_toRightOf="@id/rgbLogo"
+            android:autoLink="web"
+            android:padding="@dimen/padding_small"
+            android:text="rgbstudios.org/binomial-calc"
+            android:textSize="@dimen/text_small" />
+
         <Button
             android:id="@+id/contactButton"
             android:layout_width="wrap_content"
