@@ -64,6 +64,31 @@
             android:text="Send Feedback  "
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/rateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contactButton"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/colorPrimary"
+            android:drawableRight="@drawable/ic_rate_review_white_24dp"
+            android:padding="@dimen/padding_small"
+            android:text="Rate  "
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contactButton"
+            android:layout_toRightOf="@+id/rateButton"
+            android:layout_margin="@dimen/padding_medium"
+            android:background="@color/colorPrimary"
+            android:drawableRight="@drawable/ic_share_white_24dp"
+            android:padding="@dimen/padding_small"
+            android:text="Share  "
+            android:textColor="@color/white" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
